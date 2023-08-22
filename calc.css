@@ -9,7 +9,7 @@ section {
 }
 body {
     overflow: hidden;
-    background-image: url(/resource/cheems-background.jpg);
+    background-image: url(resource/cheems-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }

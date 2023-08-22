@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+html {
+    width: 100%;
+    height: 100%;
+}
+section {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+    background-image: url(/resource/cheems-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#titulo-calculadora button{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    flex-wrap: wrap;
+    display: grid;
+    align-content: center;
+    color: rgb(255, 255, 255);
+    width: 45px;
+    height: 45px;
+    text-transform: uppercase;
+    user-select: none;
+    font-family: 'Open Sans', sans-serif;
+}
+#titulo-calculadora button:hover{
+    background-color: rgba(131, 129, 129, 0.295);
+}
+.calculadora {
+    background-color: #242424;
+    width: 320px;
+    height: 470px;
+    display: flex;
+    position: absolute;
+    display: none;
+    transition: opacity 0.3s, transform 0.3s;
+}
+.calculadora {
+    background-color: #1f1e1e ;
+     width: 357px; 
+     height: 556px; 
+     display:flex; 
+     flex-direction:column;
+}
+.calc-title {
+    background-color: #242424;
+    width: 320px;
+    height: 40px;
+}
+
+.calc-interface {
+    display: grid;
+    gap: 1px
+}
+.menu-calc {
+    
+    align-items: center;
+    display: flex;
+}
+.menu-calc p {
+    font-family: sans-serif;
+    user-select: none;
+    color: rgba(253, 253, 253, 0.849);
+    text-transform: capitalize;
+    width: 100%;
+    font-size: 20px;
+}
+.menu-calc button {
+    font-size: large;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+.menu-calc button:hover{
+    background-color: #4e4c4c8c
+}
+.solution_display{
+    width: 100%;
+}
+#display_solutions {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    height: 15px;
+}
+.operators button {
+    color: white;
+    border-radius: 4px;
+    border: #242424;
+    background-color: #4e4c4c8c;
+    width: 95%;
+    height: 95%;
+}
+.operators-up button {
+    background-color: transparent;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+}
+.operators-up {
+    color: #4d4b4ba9;
+    margin: 9px;
+    display: flex;
+}
+.operators button:hover {
+    background-color: #4b49495d
+}
+
+.operators {
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+.operators button {
+    font-weight: bold;
+    font-size: 17px;
+}
+#current_operations {
+    margin-right: 10px;
+    color: white;
+    font-size: 50px;
+    outline: none;
+    text-align: right;
+    border: none;
+    background-color: transparent;
+    height: 69px;
+}
+.elements {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+}
+.calc-icon {
+    user-select: none;
+    font-family: sans-serif;
+    margin-top: 5px;
+    display: flex;
+}
+
+.barra-de-tareas {
+    background-color: #919eac59; /* Color de fondo de la barra de tareas */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Alinea los íconos a la izquierda */
+    padding: 0; /* Elimina el espacio interior de la barra de tareas */
+}
+
+
+.icono {
+    justify-content: center;
+    width: 40px;
+    height: 35px;
+    margin-right: 10px; /* Espacio entre los iconos */
+}
+
+.icono img {
+    border-radius: 3px;
+    margin: 10px;
+    width: 18px; /* Tamaño de los íconos */
+    height: 18px;
+}
+
+.icono:hover {
+    background-color: #ffffff27; /* Cambia el color de fondo al pasar el ratón sobre los íconos */
+}
+
+/* Estilo para el tooltip */
+.tooltip {
+    position: absolute;
+    top: -30px; /* Coloca el tooltip encima del ícono */
+    left: 25px; /* Centra el tooltip horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición horizontal */
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out, top 0.5s ease-in-out;
+    opacity: 0; /* Inicialmente establecemos la opacidad en 0 para que esté oculto */
+    visibility: hidden; /* Inicialmente ocultamos el elemento */
+}
+
+/* Mostrar el tooltip cuando el mouse está sobre el ícono */
+.icono:hover .tooltip {
+    display: block;
+    opacity: 1; /* Hacer el tooltip visible */
+    visibility: visible; /* Hacer el tooltip visible */
+    top: -40px; /* Ajustar la posición para que esté justo encima del ícono */
+}
+
+
+
+
+
+
+
+

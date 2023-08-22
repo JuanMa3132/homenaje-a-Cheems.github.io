@@ -113,6 +113,67 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+const seleccion = document.getElementById("seleccion");
+        let seleccionando = false;
+        let startX, startY, endX, endY;
+
+        function ocultarSeleccion() {
+            seleccion.style.display = "none";
+        }
+
+        function mostrarSeleccion() {
+            seleccion.style.display = "block";
+        }
+
+        document.addEventListener("mousedown", (e) => {
+            seleccionando = true;
+            startX = e.clientX;
+            startY = e.clientY;
+
+            seleccion.style.left = startX + "px";
+            seleccion.style.top = startY + "px";
+            seleccion.style.width = "0";
+            seleccion.style.height = "0";
+
+            mostrarSeleccion();
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!seleccionando) return;
+
+            endX = e.clientX;
+            endY = e.clientY;
+
+            const width = Math.abs(endX - startX);
+            const height = Math.abs(endY - startY);
+
+            seleccion.style.width = width + "px";
+            seleccion.style.height = height + "px";
+
+            seleccion.style.left = (endX > startX) ? startX + "px" : endX + "px";
+            seleccion.style.top = (endY > startY) ? startY + "px" : endY + "px";
+        });
+
+        document.addEventListener("mouseup", () => {
+            seleccionando = false;
+            ocultarSeleccion();
+        });
+
+        // Excluir el elemento cuando el mouse entre en él
+        const elementoExcluido = document.getElementById("calculadora");
+        elementoExcluido.addEventListener("mouseenter", () => {
+            seleccionando = false;
+            ocultarSeleccion();
+        });
+
+        // Reactivar la selección cuando el mouse salga del elemento excluido
+        elementoExcluido.addEventListener("mouseleave", () => {
+            if (seleccionando) {
+                mostrarSeleccion();
+            }
+        });
+
+        
 
 
 

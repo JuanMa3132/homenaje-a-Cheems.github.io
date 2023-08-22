@@ -8,12 +8,14 @@ section {
     padding: 0;
 }
 body {
+    user-select: none;
     overflow: hidden;
     background-image: url(resource/cheems-background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 #titulo-calculadora button{
+    user-select: none;
     text-align: center;
     background-color: transparent;
     border: none;
@@ -32,6 +34,7 @@ body {
     background-color: rgba(131, 129, 129, 0.295);
 }
 .calculadora {
+    user-select: none;
     background-color: #242424;
     width: 320px;
     height: 470px;
@@ -202,6 +205,13 @@ body {
     top: -40px; /* Ajustar la posición para que esté justo encima del ícono */
 }
 
+.seleccion {
+    position: absolute;
+    border: 2px solid blue;
+    background-color: rgba(0, 0, 255, 0.2); /* Color de fondo azul transparente */
+    pointer-events: none; /* Evita que el elemento bloquee interacciones del mouse */
+    display: none; /* Inicialmente oculto */
+}
 
 
 

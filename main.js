@@ -1,3 +1,34 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const fullscreenMessage = document.getElementById("fullscreen-message");
+
+    // Mostrar el mensaje en pantalla completa al cargar la página
+    fullscreenMessage.style.display = "block";
+
+    // Escuchar el evento de cambio de pantalla completa
+    document.addEventListener("fullscreenchange", function() {
+        if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+            // Ocultar el mensaje cuando el usuario entra en modo de pantalla completa
+            fullscreenMessage.style.display = "none";
+        } else {
+            // Mostrar el mensaje cuando el usuario sale del modo de pantalla completa
+            fullscreenMessage.style.display = "block";
+        }
+    });
+
+    // Función para solicitar el modo de pantalla completa
+    fullscreenMessage.addEventListener("click", function() {
+        const docEl = document.documentElement;
+        if (docEl.requestFullscreen) {
+            docEl.requestFullscreen();
+        } else if (docEl.mozRequestFullScreen) {
+            docEl.mozRequestFullScreen();
+        } else if (docEl.webkitRequestFullscreen) {
+            docEl.webkitRequestFullscreen();
+        } else if (docEl.msRequestFullscreen) {
+            docEl.msRequestFullscreen();
+        }
+    });
+});
 'use strict';
 
 let posX, posY; // Declarar las variables fuera de las funciones
@@ -129,7 +160,13 @@ const seleccion = document.getElementById("seleccion");
             seleccionando = true;
             startX = e.clientX;
             startY = e.clientY;
-
+            if (e.target.id === "calculadora" || e.target.closest("#calculadora") ){
+                return;
+            }
+            if (e.target.id === "bar-task" || e.target.closest("#bar-task") ){
+                return;
+            }
+            
             seleccion.style.left = startX + "px";
             seleccion.style.top = startY + "px";
             seleccion.style.width = "0";

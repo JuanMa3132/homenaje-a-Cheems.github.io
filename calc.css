@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed:wght@300&display=swap');
 html {
     width: 100%;
@@ -147,8 +148,9 @@ body {
 
 .operators {
     grid-template-columns: repeat(4, 1fr);
-    width: 100%;
+    width: 99%;
     height: 100%;
+    margin: 4px;
     display: grid;
 }
 .operators button {
@@ -195,13 +197,13 @@ body {
 .icono {
     justify-content: center;
     width: 40px;
-    height: 35px;
+    height: 40px;
     margin-right: 10px; /* Espacio entre los iconos */
 }
 
 .icono img {
     border-radius: 3px;
-    margin: 10px;
+    margin: 10px 10px 10px 15px;
     width: 18px; /* Tamaño de los íconos */
     height: 18px;
 }
@@ -223,7 +225,9 @@ body {
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out, top 0.5s ease-in-out;
     opacity: 0; /* Inicialmente establecemos la opacidad en 0 para que esté oculto */
     visibility: hidden; /* Inicialmente ocultamos el elemento */
+    z-index: 3;
 }
+
 
 /* Mostrar el tooltip cuando el mouse está sobre el ícono */
 .icono:hover .tooltip {
@@ -240,7 +244,65 @@ body {
     pointer-events: none; /* Evita que el elemento bloquee interacciones del mouse */
     display: none; /* Inicialmente oculto */
 }
+.menu-square {
+    display: flex;
+    border-right: 10px solid transparent; /* Specify a border style */
+    position: absolute;
+    top: 8%; /* Align to the top edge of the parent */
+    left: 0; /* Align to the right edge of the parent */
+    background-color: white;
+    width: 30%;
+    height: 86.5%
+  }
+  .aplications {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f1e1e73;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    height: 90%;
+    width: 72%;
+    overflow-y: auto;   
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+    padding: 8px; /* Espacio interno para evitar que las aplicaciones se peguen a los bordes */
+}
 
+.aplications .app {
+    width: 100%;
+    height: 50px; /* Altura de una aplicación (ajusta según tus necesidades) */
+    background-color: #f3d4d4;
+    margin-bottom: 20px; /* Espacio entre aplicaciones */
+}
+.menu-all {
+    background-color: #1f1e1e;
+    height: 100%;
+    width: 10%;
+    z-index: 2;
+    transition: width 0.3s, height 0.3s; /* Aplicar transición a las propiedades width y height */
+}
+
+.menu-all:hover {
+  width: 100%;
+  height: 100%;
+}
+.imgs {
+    background-color: #0f0f0f;
+    position: relative;
+    width: 90%;
+    height: 40% ;
+    top: 60%;
+}
+.power {
+    position: relative;
+    top: 83.5%;
+    height: 10%;
+    width: 90%;
+    padding: 15%;
+}
+.power:hover {
+    background-color: rgba(255, 255, 255, 0.377);
+}
 
 
 
